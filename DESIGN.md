@@ -4,36 +4,43 @@ Visual system for VisibleCymru. Single self-contained `index.html` (no build ste
 
 ## Theme
 
-Bold, warm and unmistakably mid-Wales. A **deep sage-forest drench** (the colour of the
-Cambrian hills) is the dominant surface, lifted by warm cream, terracotta and gorse-gold,
-with warm-charcoal for the moody "problem" moments and warm-**cream paper** sections for
-the two focal moments (the Direct Booking System and the founder story) so they feel
-bright and welcoming. Local motifs throughout: OS-map contour lines, layered hills, a few
-grazing sheep, and a bilingual *Croeso* touch. Committed / full-palette strategy — the
-warmth is carried by colour, illustration and copy, never by a timid near-white body.
+Bright, warm and welcoming, unmistakably mid-Wales. A **warm off-white** is the dominant
+surface with dark near-black text; the mid-Wales **green is an accent** (muted sage, dulled
+down — never a drench), terracotta is the primary call-to-action, and gorse-gold is the
+secondary highlight. A handful of deliberate green-accent moments give rhythm: the marquee
+ribbon, the featured pricing tier, the launch-partner panel, and the "Made here" hills band.
+The **hero is a full-bleed aerial photo** (`hero.jpg`) of the local landscape under a
+neutral slate scrim, with a sky→fields gradient fallback until the file is added. Local
+motifs: OS-map contour lines, hills, grazing sheep, a bilingual *Croeso* touch.
 
 ## Color
 
-Full palette, art-directed per section (hex tokens in `:root`).
+White-dominant, green as accent (hex tokens in `:root`).
 
 | Token | Value | Role |
 |---|---|---|
-| `--forest` `--forest-2` `--moss` | `#173229` `#1D3E33` `#2B5647` | body + raised forest surfaces |
-| `--char` | `#191712` | warm charcoal — OTA-leak section, footer |
-| `--paper` `--paper-2` | `#F6EFDF` `#EFE6D2` | warm cream sections (booking, about) & cards |
-| `--cream` `--cream-2` `--cream-3` | `#F6EFDF` `#D3DBCB` `#9FB2A5` | text ramp on dark |
-| `--ink` `--ink-2` | `#211E17` `#5A5445` | text on paper |
+| `--bg` `--surface` `--surface-2` | `#F8F7F1` `#FFFFFF` `#F1EFE6` | warm off-white body, cards, alt bands |
+| `--ink` `--ink-2` `--muted-2` | `#1B241E` `#515A52` `#6C7670` | text ramp on white |
+| `--forest` `--forest-2` `--moss` | `#2C453B` `#334D42` `#3E5C4F` | **muted** sage-green accent blocks |
+| `--green` `--green-deep` `--green-soft` | `#2E6B52` `#245A44` `#E8F0EA` | accent green text/icons + pale tint |
 | `--clay` | `#DE6B41` | terracotta accent / illustration |
-| `--clay-btn` | `#BE5029` | deeper terracotta — **button backgrounds** (white text, AA) |
-| `--clay-text` | `#A0431B` | dark terracotta — **terracotta text on cream** (AA) |
-| `--clay-hi` | `#F0855C` | bright terracotta — text on dark, hover |
-| `--ochre` `--ochre-deep` | `#E7AC3E` `#C58E2A` | gorse gold — secondary highlight |
-| `--sage` `--sage-soft` | `#6FA089` `#9DBFAE` | sage — contour lines, hills |
+| `--clay-btn` | `#BE5029` | terracotta **button backgrounds** (white text, AA) |
+| `--clay-text` | `#A0431B` | terracotta **text on white** (AA) |
+| `--ochre` `--gold-text` | `#E7AC3E` `#976B12` | gorse gold — fills / gold text on white |
+| `--cream` `--cream-2` | `#F6EFDF` `#CFDACD` | text on the green accent blocks |
 
-Contrast verified AA+: cream 12:1 on forest, clay-hi 5.4:1 on forest, ochre 6.8:1 on
-forest, ink 14.5:1 on paper, clay-text 5.5:1 on paper, white 4.6–4.8:1 on every terracotta
-button/feature/CTA surface. Mid-tone `--clay` is **never** used for text or button labels —
-that's what `--clay-btn` / `--clay-text` are for.
+Contrast verified AA+: ink 14.9:1 on bg, ink-2 6.7:1, green-accent 5.9:1 on white,
+clay-text 5.5:1 on white, white/cream 9–10:1 on the muted green, ochre 5.1:1 on green,
+white 4.6:1 on every terracotta button/CTA. Mid-tone `--clay` is never used for text or
+labels — `--clay-btn` / `--clay-text` are.
+
+## Hero photo
+
+Drop a landscape aerial photo in as **`hero.jpg`** (≈2000px wide) at the repo root. It's
+loaded as a CSS background on `.hero-photo` with a neutral slate scrim (`.hero-overlay`)
+weighted left+top so the white headline and light nav stay legible over a bright sky. Until
+the file exists, a sky→fields gradient stands in. Reduced-motion needs nothing special —
+it's a still image, not video.
 
 ## Typography
 
