@@ -1,53 +1,51 @@
-# Flow Field — Generative Art Playground
+# VisibleCymru
 
-An interactive, real-time generative-art toy built as a **single self-contained HTML file**.
-No build step, no dependencies, no network — just open `index.html` in any modern browser.
+Marketing site for **VisibleCymru** — helping mid-Wales places to stay (B&Bs,
+self-catering, farm stays, guesthouses and small hotels) get **found online** and
+**booked direct**, with no commission handed to Booking.com or Airbnb.
 
-![status](https://img.shields.io/badge/dependencies-none-brightgreen)
-![status](https://img.shields.io/badge/build-not%20required-blue)
+A single self-contained `index.html` — no build step, no framework, no dependencies.
+Just open it, or serve the folder.
 
-## What it does
+## What's on the page
 
-Thousands of particles drift through an invisible vector field whose direction is
-driven by **Perlin noise** (implemented from scratch in ~30 lines). The result is
-the smooth, organic, flowing motion you see in classic creative-coding sketches —
-running live at 60fps on the HTML5 canvas.
+- **Free visibility snapshot** — an interactive demo that plays out what a guest sees
+  when they search your name on Google, Maps and Facebook.
+- **OTA commission calculator** — slide in your nightly rate and monthly bookings and
+  see, live, what you lose to the OTAs each year versus what you'd keep direct.
+- **Direct Booking System** — the named product: real-time availability calendar,
+  secure card payments, mobile-first guest flow, zero OTA commission.
+- **The service ladder** — free Snapshot → £75 Visibility Package → £395 Website, with
+  the Direct Booking System as the next step or a standalone add-on.
+- **Launch-partner** places, an about section, FAQ and contact.
 
-## Features
+## Design
 
-- **Real-time controls** — tune particle count, flow scale, speed, trail length, and curl on the fly
-- **Five hand-picked palettes** — Aurora, Ember, Forest, Mono, Candy
-- **Mouse interaction** — move to push the flow apart, click to pull it together
-- **Additive color blending** for glowing, layered trails
-- **Save PNG** — export your favorite frame as a wallpaper
-- **Keyboard shortcuts** — `Space` to pause, `H` to hide the panel
-- **Touch support** and a live FPS meter
-- Re-seeds the noise field on every load, so no two sessions look alike
+The visual system (Slate & Sage palette, typography, motion, components) is documented
+in [`DESIGN.md`](DESIGN.md); the strategic brief (users, purpose, principles,
+accessibility) in [`PRODUCT.md`](PRODUCT.md). Built to WCAG AA, fully responsive
+(375 / 768 / 1024 / 1440), with full `prefers-reduced-motion` support.
 
 ## Run it
 
 ```bash
-# just open the file — that's the whole setup
+# just open the file
 open index.html        # macOS
 xdg-open index.html    # Linux
-start index.html       # Windows
+
+# or serve the folder
+python3 -m http.server 8000   # then visit http://localhost:8000
 ```
 
-Or serve it locally:
+## Files
 
-```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
-```
+| File | Purpose |
+|------|---------|
+| `index.html` | The site — all HTML, CSS and JS inline |
+| `dylan.jpg` | Founder photo (about section) |
+| `og.png` | Social-share preview image |
+| `visiblelocal.html` | Redirect stub for the old VisibleLocal URL |
 
-## How it works
-
-| Piece | Idea |
-|-------|------|
-| **Vector field** | Each point in space maps to an angle via `Perlin(x·scale, y·scale + z)`. The slowly-advancing `z` makes the whole field breathe over time. |
-| **Particles** | Lightweight points that sample the field at their position, step along it, and respawn when they leave the screen or age out. |
-| **Trails** | Instead of clearing the canvas each frame, it's painted with a translucent black — older strokes fade gradually. |
-| **Glow** | Strokes use the `lighter` composite mode so overlapping paths accumulate brightness. |
-
-Everything lives in `index.html`: the Perlin implementation, the simulation, and
-the UI are all in one ~400-line file with no external assets.
+> **Deploying to a real domain:** the social-share (`og:`) and canonical URLs in
+> `index.html` still point at the placeholder `vocal-blancmange-3d3b47.netlify.app`.
+> Swap those for your own domain (e.g. `https://visiblecymru.cymru`) when it's live.
