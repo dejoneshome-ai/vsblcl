@@ -4,59 +4,67 @@ Visual system for VisibleCymru. Single self-contained `index.html` (no build ste
 
 ## Theme
 
-Dark, editorial, grounded — "Slate & Sage", evolved. A slate near-black base (with a
-faint sage undertone) lit by warm terracotta and amber, with deep sage as a second
-surface world for the Direct Booking System, the final CTA and the Welsh-hills band.
-Physical reference: mid-Wales at dusk — slate roofs, bracken, gorse, hearth light.
-Committed colour strategy; warmth carried by accent + type + copy, not by a tinted body.
+Bold, warm and unmistakably mid-Wales. A **deep sage-forest drench** (the colour of the
+Cambrian hills) is the dominant surface, lifted by warm cream, terracotta and gorse-gold,
+with warm-charcoal for the moody "problem" moments and warm-**cream paper** sections for
+the two focal moments (the Direct Booking System and the founder story) so they feel
+bright and welcoming. Local motifs throughout: OS-map contour lines, layered hills, a few
+grazing sheep, and a bilingual *Croeso* touch. Committed / full-palette strategy — the
+warmth is carried by colour, illustration and copy, never by a timid near-white body.
 
 ## Color
 
-OKLCH-reasoned, expressed as hex tokens (`:root`).
+Full palette, art-directed per section (hex tokens in `:root`).
 
 | Token | Value | Role |
 |---|---|---|
-| `--bg` | `#0A0D0E` | body — slate near-black |
-| `--surface` `--card` `--card-2` | `#12171A` `#161C1F` `#1C2429` | raised surfaces |
-| `--sage-deep` `--sage` `--sage-hi` | `#0B201C` `#123028` `#1B463B` | sage surface world |
-| `--ink` `--soft` `--muted` | `#F4EFE5` `#CDC6B6` `#9AA69E` | warm cream text ramp |
-| `--terra` `--terra-hi` | `#E6613A` `#FB7C52` | primary accent / CTA; bright variant for text-on-dark |
-| `--amber` `--amber-deep` | `#EBAE3E` `#CB932E` | secondary highlight |
-| `--on-accent` | `#1C0E07` | dark ink on terracotta/amber buttons |
+| `--forest` `--forest-2` `--moss` | `#173229` `#1D3E33` `#2B5647` | body + raised forest surfaces |
+| `--char` | `#191712` | warm charcoal — OTA-leak section, footer |
+| `--paper` `--paper-2` | `#F6EFDF` `#EFE6D2` | warm cream sections (booking, about) & cards |
+| `--cream` `--cream-2` `--cream-3` | `#F6EFDF` `#D3DBCB` `#9FB2A5` | text ramp on dark |
+| `--ink` `--ink-2` | `#211E17` `#5A5445` | text on paper |
+| `--clay` | `#DE6B41` | terracotta accent / illustration |
+| `--clay-btn` | `#BE5029` | deeper terracotta — **button backgrounds** (white text, AA) |
+| `--clay-text` | `#A0431B` | dark terracotta — **terracotta text on cream** (AA) |
+| `--clay-hi` | `#F0855C` | bright terracotta — text on dark, hover |
+| `--ochre` `--ochre-deep` | `#E7AC3E` `#C58E2A` | gorse gold — secondary highlight |
+| `--sage` `--sage-soft` | `#6FA089` `#9DBFAE` | sage — contour lines, hills |
 
-Contrast verified: ink 17:1, soft 11.5:1, terra-hi 7.5:1, terra 5.7:1, on-accent-on-terra
-5.5:1 — all AA+. Use `--terra-hi` (not `--terra`) for small terracotta text.
+Contrast verified AA+: cream 12:1 on forest, clay-hi 5.4:1 on forest, ochre 6.8:1 on
+forest, ink 14.5:1 on paper, clay-text 5.5:1 on paper, white 4.6–4.8:1 on every terracotta
+button/feature/CTA surface. Mid-tone `--clay` is **never** used for text or button labels —
+that's what `--clay-btn` / `--clay-text` are for.
 
 ## Typography
 
-**Single family: Bricolage Grotesque** (opsz 12–96, wght 400–800) — the existing,
-distinctive brand identity; kept and pushed harder on optical-size + weight contrast
-rather than paired with a reflex serif. Body 1.62 line-height (raised for light-on-dark).
-Display: `clamp(38px,5.2vw,62px)`, letter-spacing −0.032em. Headings `text-wrap:balance`,
-prose `text-wrap:pretty`, measure capped ~66ch. Tabular figures on prices/calculator.
+**Single family: Bricolage Grotesque** (opsz 12–96, wght 400–800) — the committed brand
+identity, pushed to a big, friendly display weight (`clamp(42px,6vw,74px)`,
+letter-spacing −0.035em). Body 1.62 line-height. Headings `text-wrap:balance`, prose
+`pretty`, measure capped ~66ch, tabular figures on money.
 
 ## Motion
 
-Ease-out only — `--ease` = `cubic-bezier(.22,1,.36,1)`, `--ease-soft` = ease-out-cubic.
-No bounce/overshoot (the old calendar-pin overshoot was removed). Headline word-rise,
-IntersectionObserver scroll reveals (with a 2.6s failsafe so nothing ships blank),
-animated count-up in the OTA calculator, hill parallax, magnetic CTAs (fine pointer only).
+Ease-out only (`--ease` = `cubic-bezier(.22,1,.36,1)`), no bounce/overshoot. Headline
+word-rise, scroll reveals (2.6s failsafe so nothing ships blank), floating booking cards,
+animated count-up in the calculator, hills parallax, magnetic CTAs (fine-pointer only).
 Full `prefers-reduced-motion` block disables all and shows final states.
 
-## Signature components
+## Section rhythm & signature components
 
-- **Snapshot demo** — phone mockup that plays search → local-results for the visitor's name.
-- **OTA commission calculator** — two sliders (rate, bookings/mo) → live £ lost vs kept,
-  animated, `aria-live` headline. 15% commission constant.
-- **Direct Booking System mockup** — availability calendar with booked/available/selected
-  states, "0% commission" badge, "confirm & pay direct".
-- **Launch-partner panel** — 2-of-5 filled slots, honest capacity scarcity.
-- **Welsh-hills band** — layered SVG hills with scroll parallax and a soft sun.
+Deliberate light/dark cadence: forest hero → charcoal OTA-leak → **cream** Direct Booking
+→ forest snapshot/ladder/how/launch/who → **cream** About → forest hills band → forest
+FAQ → terracotta CTA → charcoal footer. Wavy SVG `paper-edge` transitions between worlds.
+
+- **Hero** — forest-drenched, booking calendar card as the visual (0% commission), *Croeso*.
+- **OTA calculator** — sliders (nightly rate up to **£1,500**, bookings/mo) → live £ lost vs
+  kept, animated, `aria-live`. 15% commission constant.
+- **Direct Booking System** — the star, on cream paper: feature list + booking mockup.
+- **Free snapshot** — the relocated interactive phone demo (free tier of the ladder).
+- **Launch partner** — honest 2-of-5 capacity scarcity.
+- **Hills band** — layered SVG hills, parallax, soft sun, grazing sheep.
 
 ## Layout
 
-`.wrap` max-width 1120–1140px, 24px gutters. Full-bleed section wrappers (`.leak`,
-`.dbs`, `.band`) break out of the container for their own colour worlds. Breakpoints:
-1024 / 920 / 640 / 380. No repeated uppercase eyebrows — light sentence-case `.index-cue`
-wayfinding on a few sections only. Cards used only where they're the right affordance
-(pricing ladder, FAQ); features are dividered lists, not card grids.
+`.wrap` max-width 1160px, 26px gutters. Full-bleed section wrappers own their colour
+worlds. Breakpoints 1024 / 920 / 640 / 400. Nav collapses to call + CTA below 920.
+No repeated uppercase eyebrows — sentence-case kickers used as light wayfinding.

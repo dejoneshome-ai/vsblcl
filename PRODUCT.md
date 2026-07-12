@@ -42,8 +42,9 @@ jargon.
 1. **Practice what you preach.** The site itself is the £395 proof — its craft is the pitch.
 2. **Show, don't tell.** Interactive proof over claims: the live snapshot demo, the OTA
    calculator worked out on the visitor's own numbers, a real booking mockup.
-3. **Grounded in place.** Slate-and-sage palette, Welsh hills, local voice — the warmth
-   comes from typography, colour and copy, not from a stock hero photo.
+3. **Grounded in place.** Forest-and-earth palette, Welsh hills, sheep, a bilingual
+   *Croeso* — friendly and unmistakably mid-Wales. Warmth comes from colour, illustration
+   and copy, not from a stock hero photo.
 4. **A ladder, not a wall.** Every visitor can start free and climb only as far as they need.
 5. **Honest scarcity.** Launch-partner limits reflect real capacity (a handful at a time),
    never a fake countdown.
