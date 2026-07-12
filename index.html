@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.className+=' js';</script>
 <title>VisibleCymru — direct bookings for mid Wales places to stay</title>
-<meta name="description" content="VisibleCymru builds websites and direct-booking systems for mid Wales B&Bs, self-catering, farm stays and small hotels — so guests book you direct, and Booking.com and Airbnb don't take a cut. Free visibility snapshot, £75 Visibility Package, £395 website, and a Direct Booking System built for you.">
+<meta name="description" content="VisibleCymru builds websites and direct-booking systems for mid Wales B&Bs, self-catering, farm stays and small hotels — so guests book you direct, and Booking.com and Airbnb don't take a cut. Free visibility snapshot, one-off websites from £350, and an optional care plan.">
 <!-- Social sharing preview. NOTE: URLs point at the live domain below. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VisibleCymru">
@@ -398,6 +398,42 @@
   .ladder-note{margin-top:24px;text-align:center;font-size:14.5px;color:var(--muted-2);}
   .ladder-note b{color:var(--ink-2);}
 
+  /* pricing extras (add-ons + audit) */
+  .extras{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px;}
+  .extra-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 28px;}
+  .extra-card h4{font-weight:700;font-size:17px;margin-bottom:14px;}
+  .extra-card p{font-size:15px;color:var(--ink-2);margin-bottom:16px;line-height:1.55;}
+  .extra-card p strong{color:var(--ink);}
+  .addon-list{list-style:none;display:grid;gap:0;}
+  .addon-list li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink-2);}
+  .addon-list li:last-child{border-bottom:none;}
+  .addon-list li b{color:var(--ink);font-weight:800;white-space:nowrap;}
+  .addon-list li small{color:var(--muted-2);font-weight:500;}
+
+  /* optional care plan */
+  .care-trust{display:inline-flex;align-items:center;gap:10px;margin:0 auto 40px;padding:12px 22px;border-radius:999px;
+    background:var(--green-soft);border:1px solid var(--green-line);color:var(--green-deep);font-size:15px;font-weight:600;line-height:1.4;}
+  .care-trust strong{color:var(--green-deep);font-weight:800;}
+  .care-trust svg{color:var(--green);flex-shrink:0;}
+  .care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;position:relative;
+    transition:transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);}
+  .plan:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+  .plan.pop{border:2px solid var(--clay);box-shadow:var(--shadow);}
+  .pflag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--clay-btn);color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;padding:6px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px -8px rgba(190,80,41,.5);}
+  .pname{font-weight:700;font-size:19px;}
+  .pprice{font-weight:800;font-size:38px;line-height:1;letter-spacing:-0.02em;color:var(--ink);margin:6px 0 4px;}
+  .pprice small{font-size:15px;font-weight:600;color:var(--muted-2);letter-spacing:0;}
+  .plan.pop .pprice{color:var(--clay-text);}
+  .psub{font-size:14px;color:var(--ink-2);margin-bottom:16px;}
+  .plist{list-style:none;margin-bottom:22px;flex:1;}
+  .plist li{font-size:14px;color:var(--ink-2);padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--line);line-height:1.45;}
+  .plist li:last-child{border-bottom:none;}
+  .plist li::before{content:"";position:absolute;left:0;top:11px;width:15px;height:15px;border-radius:50%;
+    background:var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E6B52' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/8px no-repeat;}
+  .plan .btn{width:100%;justify-content:center;}
+  .care-note{margin:26px auto 0;text-align:center;font-size:14.5px;color:var(--muted-2);max-width:620px;}
+
   /* ---------- how it works ---------- */
   .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
   .flow-step{padding:0 28px;position:relative;}
@@ -515,6 +551,8 @@
     .device{transform:rotateY(-5deg) rotate(1deg);}
     .leak-grid,.dbs-grid,.snap-grid{grid-template-columns:1fr;}
     .ladder{grid-template-columns:1fr;max-width:560px;margin:0 auto;}
+    .extras{grid-template-columns:1fr;}
+    .care-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
     .flow{grid-template-columns:1fr;gap:8px;} .flow-step{padding:0;} .flow-step:not(:last-child)::after{display:none;}
     .launch{grid-template-columns:1fr;gap:32px;}
     .about{grid-template-columns:1fr;gap:48px;}
@@ -712,7 +750,7 @@
           <li class="dbs-feat"><span class="fi"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span><div><h4>Mobile-first guest flow</h4><p>Most guests book from a phone on the sofa. Dates, details, pay — the whole thing is fast and effortless on a small screen.</p></div></li>
           <li class="dbs-feat"><span class="fi"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="5" y1="19" x2="19" y2="5"/></svg></span><div><h4>Zero OTA commission</h4><p>No 15% skim, no per-booking fee to a platform. What the guest pays is what you keep, minus only the card processing.</p></div></li>
         </ul>
-        <div class="dbs-fit"><span class="chip">Fits the ladder</span><span>The natural next step after your <a href="#services">£395 website</a> — or a standalone add-on to a site you already have.</span></div>
+        <div class="dbs-fit"><span class="chip">Built in</span><span>Included in the <a href="#services">Direct-Booking &amp; Premium sites</a> — or added to a site you already have.</span></div>
         <div class="dbs-cta">
           <a href="mailto:dejones.home@icloud.com?subject=Direct%20Booking%20System%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27d%20like%20to%20hear%20about%20the%20Direct%20Booking%20System.%0A%0ABusiness%20name%3A%20%0ATown%3A%20%0AWhere%20I%20take%20bookings%20now%20(Booking.com%2C%20Airbnb%2C%20phone...)%3A%20%0A%0AThanks%21" class="btn btn-primary">Talk direct bookings</a>
           <a href="tel:+447487558999" class="btn btn-ghost">
@@ -764,7 +802,7 @@
       <div class="snap-copy reveal">
         <span class="kicker"><i></i> Start free</span>
         <h2>See what a guest sees <span class="accent">when they search you</span>.</h2>
-        <p class="snap-lede">Before anyone books, they Google you. Pop your name in and watch the free snapshot play out exactly what shows up on Google, Maps and Facebook — in about a minute. It's the first rung of the ladder, and it costs nothing.</p>
+        <p class="snap-lede">Before anyone books, they Google you. Pop your name in and watch the free snapshot play out exactly what shows up on Google, Maps and Facebook — in about a minute. It's the free way in, and it costs nothing.</p>
         <div class="tool">
           <div class="tool-fields">
             <div class="tool-field"><label for="bizName">Your business name</label><input type="text" id="bizName" placeholder="e.g. Oakwood Farmhouse" autocomplete="off"></div>
@@ -837,72 +875,126 @@
 </div>
 </div>
 
-<!-- SERVICES LADDER -->
+<!-- PRICING: WEBSITES -->
 <div class="wrap">
   <section id="services">
     <div class="sec-head reveal">
-      <span class="kicker"><i></i> The ladder</span>
-      <h2>Start free. Climb only as far as you need.</h2>
-      <p>See where you stand for nothing, get a plan for £75, or have the whole thing built — website and direct bookings included.</p>
+      <span class="kicker"><i></i> Websites</span>
+      <h2>One website. Yours to keep.</h2>
+      <p>A one-off price, built around your place and handled end to end. No contracts, no subscriptions — just pick the level that fits.</p>
     </div>
     <div class="ladder">
       <div class="rung reveal">
-        <div class="step-lab"><i>1</i>Start here · free</div>
-        <div class="price">£0</div>
-        <h3>The Snapshot</h3>
-        <p class="sub">See your place exactly the way a searching guest sees it — in about 60 seconds.</p>
+        <div class="step-lab">One-off</div>
+        <div class="price">£350<small> once</small></div>
+        <h3>Essential site</h3>
+        <p class="sub">A clean, professional site that gets you found and taking enquiries.</p>
         <ul>
-          <li><strong>What actually shows up</strong> on Google, Maps and Facebook</li>
-          <li><strong>Where you sit</strong> next to the places around you</li>
-          <li><strong>No card, no signup</strong> — it runs right on this page</li>
+          <li><strong>Built around your place</strong> — not a template</li>
+          <li><strong>Made for phones</strong>, fast and easy</li>
+          <li><strong>Enquiries</strong> straight to your inbox</li>
         </ul>
-        <a href="#snapshot" class="btn btn-ghost">Run my free snapshot</a>
-        <p class="cta-note">Takes you back up to the checker on this page.</p>
+        <a href="mailto:dejones.home@icloud.com?subject=Essential%20site%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27m%20interested%20in%20an%20Essential%20site.%0A%0ABusiness%20name%3A%20%0ATown%3A%20%0A%0AThanks%21" class="btn btn-ghost">Enquire about Essential</a>
       </div>
-      <div class="rung reveal" style="transition-delay:.08s">
-        <div class="step-lab"><i>2</i>One-off · £75</div>
-        <div class="price">£75<small> once</small></div>
-        <h3>The Visibility Package</h3>
-        <p class="sub">A personalised, AI-researched action plan — everything to fix, in one PDF, within 48 hours.</p>
+      <div class="rung feature reveal" style="transition-delay:.08s">
+        <div class="flag">Most popular</div>
+        <div class="step-lab">One-off · my core offer</div>
+        <div class="price">£650<small> once</small></div>
+        <h3>Direct-Booking site</h3>
+        <p class="sub">Everything in Essential — plus your own booking system, so guests book and pay you direct.</p>
         <ul>
-          <li><strong>Competitor comparison</strong> — how you stack up against places like yours</li>
-          <li><strong>Your USP online</strong> — what makes you different, and why you're behind</li>
-          <li><strong>A clear to-do list</strong> — what to fix, in what order</li>
-          <li><strong>A month of content</strong> — 8–12 posts written and ready</li>
-          <li><strong>See it first</strong> — you only pay once you're happy</li>
+          <li><strong>Real-time availability calendar</strong></li>
+          <li><strong>Secure card payments</strong> straight to you</li>
+          <li><strong>Zero OTA commission</strong> — keep the whole night</li>
         </ul>
-        <a href="mailto:dejones.home@icloud.com?subject=Visibility%20Package%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27d%20like%20a%20Visibility%20Package.%0A%0ABusiness%20name%3A%20%0ATown%3A%20%0AAnything%20specific%20you%27d%20like%20covered%3A%20%0A%0AThanks%21" class="btn btn-primary">Start my Visibility Package
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="cta-note">Opens an email with the details I need already filled in.</p>
+        <a href="mailto:dejones.home@icloud.com?subject=Direct-Booking%20site%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27d%20like%20a%20Direct-Booking%20site.%0A%0ABusiness%20name%3A%20%0ATown%3A%20%0AWhere%20I%20take%20bookings%20now%3A%20%0A%0AThanks%21" class="btn btn-onfeature">Enquire about Direct-Booking</a>
       </div>
-      <div class="rung feature reveal" style="transition-delay:.16s">
-        <div class="flag">Most complete</div>
-        <div class="step-lab"><i>3</i>One-off · £395</div>
-        <div class="price">£395<small> once</small></div>
-        <h3>The Website</h3>
-        <p class="sub">A full website built around your place — written, built and launched for you, live in about two weeks.</p>
+      <div class="rung reveal" style="transition-delay:.16s">
+        <div class="step-lab">One-off</div>
+        <div class="price">£1,100<small> once</small></div>
+        <h3>Premium site</h3>
+        <p class="sub">The full works — a larger, richer site with direct booking and the extras built in.</p>
         <ul>
-          <li><strong>Built around your business</strong> — not a template dropped on you</li>
-          <li><strong>Fully handled</strong> — nothing technical on your plate</li>
-          <li><strong>Made for phones</strong> — where your guests are looking</li>
-          <li><strong>Live in about two weeks</strong> from the moment you say yes</li>
+          <li><strong>Everything in Direct-Booking</strong></li>
+          <li><strong>More pages &amp; richer design</strong></li>
+          <li><strong>Priority build</strong> and a proper polish</li>
         </ul>
-        <div class="addon"><strong>Add the Direct Booking System</strong> and guests book &amp; pay you direct — no OTA commission. <a href="#booking">See how it works ↑</a></div>
-        <a href="tel:+447487558999" class="btn btn-onfeature">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call 07487 558999
-        </a>
-        <a href="mailto:dejones.home@icloud.com?subject=Website%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27m%20interested%20in%20a%20website%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0ATown%3A%20%0AWhat%20the%20business%20does%3A%20%0AInterested%20in%20direct%20bookings%3F%20%0A%0AThanks%21" class="alt-cta">…or email me instead</a>
+        <a href="mailto:dejones.home@icloud.com?subject=Premium%20site%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27m%20interested%20in%20a%20Premium%20site.%0A%0ABusiness%20name%3A%20%0ATown%3A%20%0A%0AThanks%21" class="btn btn-ghost">Enquire about Premium</a>
       </div>
     </div>
-    <p class="ladder-note reveal">No subscriptions, no contracts, no retainer. <b>One-off prices, paid only when you're happy.</b></p>
+
+    <div class="extras reveal">
+      <div class="extra-card">
+        <h4>Handy add-ons</h4>
+        <ul class="addon-list">
+          <li><span>Extra pages</span><b>£50 each</b></li>
+          <li><span>Booking-engine setup <small>(Lodgify / Beds24)</small></span><b>£195</b></li>
+          <li><span>Google Business setup</span><b>£100</b></li>
+        </ul>
+      </div>
+      <div class="extra-card">
+        <h4>Want a look before you commit?</h4>
+        <p>The snapshot at the top of this page is <strong>free</strong> — and always will be. Prefer the deeper version? A full written audit of your online presence is a one-off <strong>£75</strong>.</p>
+        <a href="#snapshot" class="btn btn-primary btn-sm">Run the free snapshot</a>
+      </div>
+    </div>
   </section>
+</div>
+
+<!-- OPTIONAL CARE PLAN (recurring, clearly distinct) -->
+<div class="band-alt">
+<div class="wrap">
+  <section id="care">
+    <div class="sec-head center reveal">
+      <span class="kicker"><i></i> Optional care plan</span>
+      <h2>Keep it looked after — only if you want to.</h2>
+      <p>Your website is yours to keep outright, forever. A care plan is completely optional — for owners who'd rather never think about the tech again.</p>
+    </div>
+    <div style="text-align:center"><span class="care-trust reveal"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Optional · cancel anytime · <strong>your price never goes up, ever</strong></span></div>
+    <div class="care-grid reveal" data-stagger>
+      <div class="plan">
+        <div class="pname">Essentials</div>
+        <div class="pprice tnum">£15<small>/month</small></div>
+        <p class="psub">The basics, handled.</p>
+        <ul class="plist">
+          <li>Hosting, domain &amp; security sorted</li>
+          <li>Automatic backups</li>
+          <li>A couple of small edits a month</li>
+        </ul>
+        <a href="mailto:dejones.home@icloud.com?subject=Care%20plan%20(Essentials)%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27d%20like%20the%20Essentials%20care%20plan.%0A%0ABusiness%20name%3A%20%0A%0AThanks%21" class="btn btn-ghost btn-sm">Choose Essentials</a>
+      </div>
+      <div class="plan pop">
+        <div class="pflag">Most popular</div>
+        <div class="pname">Looked-After</div>
+        <div class="pprice tnum">£35<small>/month</small></div>
+        <p class="psub">Kept fresh and up to date, for you.</p>
+        <ul class="plist">
+          <li>Everything in Essentials</li>
+          <li>Unlimited small edits &amp; seasonal updates</li>
+          <li>Prices &amp; availability kept current</li>
+        </ul>
+        <a href="mailto:dejones.home@icloud.com?subject=Care%20plan%20(Looked-After)%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27d%20like%20the%20Looked-After%20care%20plan.%0A%0ABusiness%20name%3A%20%0A%0AThanks%21" class="btn btn-primary btn-sm">Choose Looked-After</a>
+      </div>
+      <div class="plan">
+        <div class="pname">Fully-Handled</div>
+        <div class="pprice tnum">£75<small>/month</small></div>
+        <p class="psub">I run it, you run the place.</p>
+        <ul class="plist">
+          <li>Everything in Looked-After</li>
+          <li>Content &amp; social posts written for you</li>
+          <li>Priority support, first in the queue</li>
+        </ul>
+        <a href="mailto:dejones.home@icloud.com?subject=Care%20plan%20(Fully-Handled)%20-%20my%20business&body=Hi%20Dylan%2C%0A%0AI%27d%20like%20the%20Fully-Handled%20care%20plan.%0A%0ABusiness%20name%3A%20%0A%0AThanks%21" class="btn btn-ghost btn-sm">Choose Fully-Handled</a>
+      </div>
+    </div>
+    <p class="care-note reveal">No pressure to take one — you can add a care plan any time, or never. It never changes the price of your build.</p>
+  </section>
+</div>
 </div>
 
 <!-- HOW IT WORKS -->
 <div class="wrap">
-  <section id="how" style="padding-top:0;">
+  <section id="how">
     <div class="sec-head reveal">
       <span class="kicker"><i></i> How it works</span>
       <h2>No app, no login, no faff.</h2>
@@ -910,8 +1002,8 @@
     </div>
     <div class="flow reveal" data-stagger>
       <div class="flow-step"><div class="fn">1</div><h4>You say hello</h4><p>Run the free snapshot, or send your business name and town by email or phone.</p><span class="meta">Two minutes, tops</span></div>
-      <div class="flow-step"><div class="fn">2</div><h4>I do the work</h4><p>Your Visibility Package lands within 48 hours. A website — with direct bookings if you want them — takes about two weeks.</p><span class="meta">48 hours – 2 weeks</span></div>
-      <div class="flow-step"><div class="fn">3</div><h4>You see it first</h4><p>For the £75 package, you see the whole thing before paying a penny. Not happy? You owe nothing.</p><span class="meta">Pay only if happy</span></div>
+      <div class="flow-step"><div class="fn">2</div><h4>I do the work</h4><p>A paid audit lands within 48 hours. A website — with direct bookings if you want them — takes about two weeks.</p><span class="meta">48 hours – 2 weeks</span></div>
+      <div class="flow-step"><div class="fn">3</div><h4>You see it first</h4><p>You'll always see the work and agree it before anything's due. No surprises, no pressure.</p><span class="meta">No surprises</span></div>
     </div>
   </section>
 </div>
@@ -925,7 +1017,7 @@
         <h2>I'm taking on a handful of places to start.</h2>
         <p>VisibleCymru is new, and I'd rather do a few builds properly than rush a queue. So the first mid Wales places to come aboard get looked after as launch partners.</p>
         <ul class="perks">
-          <li><strong>Founder pricing held</strong> — the £395 build and booking system at today's rate, even as prices rise later</li>
+          <li><strong>Founder pricing held</strong> — today's rates on your build and booking system locked in, even as prices rise later</li>
           <li><strong>Priority build slot</strong> — your site and calendar jump the queue</li>
           <li><strong>A real say</strong> — you help shape how the booking system works for places like yours</li>
         </ul>
@@ -954,7 +1046,7 @@
         <ul class="fit-list">
           <li>You run a place people stay — and you're tired of handing a cut to Booking.com and Airbnb</li>
           <li>You know your online presence needs work but never find the hour</li>
-          <li>You've no budget for an agency, but a one-off £75 or £395 is fine</li>
+          <li>You've no budget for an agency retainer, but a one-off you own outright is fine</li>
           <li>You'd rather see the work first and decide after</li>
           <li>You want it sorted by a real person who knows the patch</li>
         </ul>
@@ -1021,12 +1113,12 @@
   <section id="faq">
     <div class="sec-head reveal"><span class="kicker"><i></i> Good to know</span><h2>Quick questions, answered.</h2></div>
     <div class="faq-list reveal">
-      <details class="faq-item"><summary>Is this a subscription or a contract?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">No. The snapshot is free, the Visibility Package is £75 once, and the website is £395 once. The Direct Booking System is a one-off add-on to your build. No subscriptions, no contracts.</div></details>
+      <details class="faq-item"><summary>Is this a subscription or a contract?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">Your website is a one-off — £350 to £1,100 — and it's yours to keep, no contract. The snapshot is free. The only recurring thing is the optional care plan (£15–£75/month), which you choose to add, can cancel any time, and never have to take at all.</div></details>
       <details class="faq-item"><summary>How does the Direct Booking System avoid commission?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">The booking happens on your own website, not on a platform. Guests pick dates from your live calendar and pay by card straight to you. There's no OTA taking a 15% cut — you only pay the standard card processing fee, the same as any shop.</div></details>
       <details class="faq-item"><summary>Do I have to leave Booking.com or Airbnb?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">Not at all. Plenty of hosts keep the OTAs for reach and use direct booking for repeat guests and anyone who finds them on Google — where there's no commission. Every booking you move to direct is money back in your pocket.</div></details>
       <details class="faq-item"><summary>Do I need to do anything technical?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">No. You send your business name and town, I do the work, you get the result. For a website and booking system I handle everything from first draft to going live — you just manage your calendar with a couple of taps.</div></details>
-      <details class="faq-item"><summary>How long does it actually take?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">Your Visibility Package arrives within 48 hours. A full website, with direct bookings if you want them, is live in about two weeks. I take on a handful of businesses at a time so each gets proper attention.</div></details>
-      <details class="faq-item"><summary>How do I pay?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">For the £75 package: only after you've seen it and you're happy, through a secure PayPal link (no PayPal account needed). For a website and booking system, we'll agree the details when we talk.</div></details>
+      <details class="faq-item"><summary>How long does it actually take?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">A paid audit arrives within 48 hours. A full website, with direct bookings if you want them, is live in about two weeks. I take on a handful of businesses at a time so each gets proper attention.</div></details>
+      <details class="faq-item"><summary>How do I pay?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">A paid audit is a secure PayPal link once it's done (no PayPal account needed). For a website and booking system, we'll agree the details when we talk. A care plan, if you choose one, is a simple monthly payment you can cancel any time.</div></details>
     </div>
   </section>
 </div>
@@ -1035,7 +1127,7 @@
 <div class="wrap">
   <section id="pay" style="padding-top:0;">
     <div class="pay-strip reveal">
-      <div><h3>Already had your Visibility Package?</h3><p>If you've received your finished PDF and you're happy with it, you can pay the £75 securely here.</p></div>
+      <div><h3>Had your paid audit?</h3><p>If you've received your finished audit and you're happy with it, you can pay the £75 securely here.</p></div>
       <a href="https://paypal.me/visiblelocal/75GBP" target="_blank" rel="noopener" class="btn btn-primary">Pay £75 via PayPal</a>
     </div>
   </section>
