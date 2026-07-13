@@ -33,7 +33,7 @@
     --ink:#1B241E;          /* near-black, faint green undertone */
     --ink-2:#515A52;        /* secondary text */
     --muted:#77807760;      /* (unused direct) */
-    --muted-2:#6C7670;      /* tertiary text (AA on white) */
+    --muted-2:#5E665E;      /* tertiary text (AA on white + surface-2) */
     --line:rgba(27,36,30,0.12);
     --line-2:rgba(27,36,30,0.18);
     /* greens — the accent */
@@ -369,7 +369,7 @@
   .rung .price{font-weight:800;font-size:48px;line-height:1;letter-spacing:-0.02em;color:var(--clay-text);}
   .rung .price small{font-size:15px;font-weight:600;color:var(--muted-2);letter-spacing:0;}
   .rung h3{font-weight:700;font-size:25px;margin:8px 0 8px;}
-  .rung .sub{font-size:14.5px;color:var(--ink-2);margin-bottom:18px;}
+  .rung .sub{font-size:14.5px;color:var(--ink-2);margin-bottom:18px;min-height:44px;} /* align feature lists across cards */
   .rung ul{list-style:none;margin-bottom:24px;flex:1;}
   .rung li{font-size:14px;color:var(--ink-2);padding:9px 0 9px 27px;position:relative;border-bottom:1px solid var(--line);line-height:1.45;}
   .rung li:last-child{border-bottom:none;}
@@ -585,9 +585,12 @@
     .btn-primary:hover svg{transform:none;} .nav-links a:hover::after{transform:scaleX(0);} .btn:hover::after{animation:none;}
   }
   :focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:5px;}
+  .skip-link{position:absolute;left:-9999px;top:10px;z-index:200;background:var(--clay-btn);color:#fff;font-weight:700;padding:11px 18px;border-radius:9px;}
+  .skip-link:focus{left:14px;}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="bg-contours" aria-hidden="true"></div>
 <div class="scroll-progress" id="prog" aria-hidden="true"></div>
@@ -616,8 +619,9 @@
 </div>
 
 <a id="top"></a>
+<main id="main">
 
-<!-- HERO with drone video background -->
+<!-- HERO -->
 <header class="hero">
   <div class="hero-media" aria-hidden="true">
     <!-- Drop your aerial photo in as hero.jpg in the repo root (≈2000px wide, landscape).
@@ -701,7 +705,6 @@
   <section id="leak">
     <div class="leak-grid">
       <div class="leak-copy reveal">
-        <span class="kicker clay"><i></i> The quiet leak</span>
         <h2>Every OTA booking skims <span class="accent">15%</span> off the top.</h2>
         <p>Booking.com and Airbnb bring you guests — then take a cut of every single night. Over a year, that "small" commission is a proper chunk of money leaving mid Wales. Slide in your own numbers and see yours.</p>
         <p class="foot">Based on a typical 15% OTA commission. Plenty of hosts pay more once you add card fees and premium placement — and every one of these bookings could have come to you direct.</p>
@@ -800,7 +803,6 @@
   <section id="snapshot">
     <div class="snap-grid">
       <div class="snap-copy reveal">
-        <span class="kicker"><i></i> Start free</span>
         <h2>See what a guest sees <span class="accent">when they search you</span>.</h2>
         <p class="snap-lede">Before anyone books, they Google you. Pop your name in and watch the free snapshot play out exactly what shows up on Google, Maps and Facebook — in about a minute. It's the free way in, and it costs nothing.</p>
         <div class="tool">
@@ -879,7 +881,6 @@
 <div class="wrap">
   <section id="services">
     <div class="sec-head reveal">
-      <span class="kicker"><i></i> Websites</span>
       <h2>One website. Yours to keep.</h2>
       <p>A one-off price, built around your place and handled end to end. No contracts, no subscriptions — just pick the level that fits.</p>
     </div>
@@ -948,7 +949,6 @@
 <div class="wrap">
   <section id="care">
     <div class="sec-head center reveal">
-      <span class="kicker"><i></i> Optional care plan</span>
       <h2>Keep it looked after — only if you want to.</h2>
       <p>Your website is yours to keep outright, forever. A care plan is completely optional — for owners who'd rather never think about the tech again.</p>
     </div>
@@ -998,7 +998,6 @@
 <div class="wrap">
   <section id="how">
     <div class="sec-head reveal">
-      <span class="kicker"><i></i> How it works</span>
       <h2>No app, no login, no faff.</h2>
       <p>Three steps, in order. A real person does the work in between — you just say hello and read the result.</p>
     </div>
@@ -1015,7 +1014,6 @@
   <section id="launch" style="padding-top:0;">
     <div class="launch reveal">
       <div class="lp-copy">
-        <span class="kicker"><i></i> Launch partners</span>
         <h2>I'm taking on a handful of places to start.</h2>
         <p>VisibleCymru is new, and I'd rather do a few builds properly than rush a queue. So the first mid Wales places to come aboard get looked after as launch partners.</p>
         <ul class="perks">
@@ -1078,7 +1076,6 @@
         </div>
       </div>
       <div class="about-text reveal" style="transition-delay:.08s">
-        <span class="kicker clay"><i></i> The person behind it</span>
         <h2>A real person, not a faceless agency.</h2>
         <p><strong>Hi — I'm Dylan.</strong> I grew up here in mid Wales, and in September I'm off to Cardiff University to study Politics and Economics. VisibleCymru is what I'm building in the meantime — partly to sharpen my own skills, and partly because the towns I grew up around are full of brilliant places to stay that deserve to be found, and booked, direct.</p>
         <p>I'm not a big agency, and I won't pretend to be one. What I am is local, careful, and honest about how I work: <strong>I use AI openly</strong> to do the heavy research — your reviews, your competitors, how Google and Tripadvisor actually rank local places — and turn all of it into things you can use.</p>
@@ -1113,7 +1110,7 @@
 <!-- FAQ -->
 <div class="wrap">
   <section id="faq">
-    <div class="sec-head reveal"><span class="kicker"><i></i> Good to know</span><h2>Quick questions, answered.</h2></div>
+    <div class="sec-head reveal"><h2>Quick questions, answered.</h2></div>
     <div class="faq-list reveal">
       <details class="faq-item"><summary>Is this a subscription or a contract?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">Your website is a one-off — £350 to £1,100 — and it's yours to keep, no contract. The snapshot is free. The only recurring thing is the optional care plan (£15–£75/month), which you choose to add, can cancel any time, and never have to take at all.</div></details>
       <details class="faq-item"><summary>How does the Direct Booking System avoid commission?<span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></summary><div class="faq-a">The booking happens on your own website, not on a platform. Guests pick dates from your live calendar and pay by card straight to you. There's no OTA taking a 15% cut — you only pay the standard card processing fee, the same as any shop.</div></details>
@@ -1152,6 +1149,8 @@
     </div>
   </section>
 </div>
+
+</main>
 
 <footer>
   <div class="wrap">
