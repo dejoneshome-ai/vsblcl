@@ -1,2 +1,18 @@
 .agents/
 skills-lock.json
+
+# taste-skill design tooling (Leonxlnx/taste-skill) — local, not part of the site
+.claude/skills/brandkit/
+.claude/skills/brutalist-skill/
+.claude/skills/gpt-tasteskill/
+.claude/skills/image-to-code-skill/
+.claude/skills/imagegen-frontend-mobile/
+.claude/skills/imagegen-frontend-web/
+.claude/skills/minimalist-skill/
+.claude/skills/output-skill/
+.claude/skills/redesign-skill/
+.claude/skills/soft-skill/
+.claude/skills/stitch-skill/
+.claude/skills/taste-skill/
+.claude/skills/taste-skill-v1/
+.claude/skills/taste-skill-llms.txt
