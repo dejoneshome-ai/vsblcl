@@ -25,8 +25,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
 <style>
+  @font-face{font-family:'Young Serif';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/young-serif.woff2') format('woff2');}
   :root{
     /* ---- Light, warm & bright — white-dominant, mid-Wales green as accent ---- */
+    --display:'Young Serif', Georgia, 'Times New Roman', serif;  /* editorial serif for display headings */
     --bg:#F8F7F1;           /* warm off-white body */
     --surface:#FFFFFF;      /* cards / raised */
     --surface-2:#F1EFE6;    /* subtle alt band */
@@ -128,8 +130,8 @@
   .btn-lg{padding:16px 30px;font-size:16px;}
 
   /* ---------- headings ---------- */
-  h1{font-weight:700;font-size:clamp(42px,6vw,74px);line-height:0.99;letter-spacing:-0.035em;}
-  h2{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.03;letter-spacing:-0.025em;}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,6.2vw,76px);line-height:1.0;letter-spacing:-0.018em;}
+  h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-0.01em;}
   h1,h2,h3,h4{text-wrap:balance;}
   p{text-wrap:pretty;}
   section{padding:88px 0;position:relative;}
